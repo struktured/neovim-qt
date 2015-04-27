@@ -29,6 +29,7 @@ signals:
 
 public slots:
 	void handleNeovimNotification(const QByteArray &name, const QVariantList& args);
+	void neovimResize(const QSize&);
 
 protected slots:
 	void neovimIsReady();
@@ -40,8 +41,8 @@ protected:
 	void tooltip(const QString& text);
 	virtual void inputMethodEvent(QInputMethodEvent *event) Q_DECL_OVERRIDE;
 
-	quint64 neovimWidth() const;
-	quint64 neovimHeight() const;
+	int neovimWidth() const;
+	int neovimHeight() const;
 	quint64 neovimRowHeight() const;
 	quint64 neovimCellWidth() const;
 	QSize neovimSize() const;
